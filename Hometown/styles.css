@@ -1,0 +1,136 @@
+/* RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: white;
+  font-family: 'Noto Serif', serif;
+}
+
+/* LAYOUT WRAPPER */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 20px;
+}
+
+/* HERO SECTION */
+.hero {
+  width: 100%;
+  height: 300px;
+  background-image: url('./resource/mdy-palace.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2.5em;
+  color: #fefefe;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ABOUT SECTION */
+.about {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* THREE COLUMNS */
+.three-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  transform: scale(1);
+}
+
+.column:hover {
+  transform: scale(1.12) translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+.column:nth-child(1) { animation-delay: 0.2s; }
+.column:nth-child(2) { animation-delay: 0.4s; }
+.column:nth-child(3) { animation-delay: 0.6s; }
+
+.column img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  transition: opacity 0.3s ease;
+}
+
+/* FOOTER */
+.site-footer {
+  width: 100%;
+  background-color: #333;
+  color: #fefefe;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9em;
+}
+
+.footer-content p {
+  margin: 8px 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .three-columns {
+    flex-direction: column;
+  }
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
